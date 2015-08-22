@@ -1,4 +1,4 @@
 Indonesia Android Academy
 ============
 
-DSSD UGM Yogyakarta
+DSSDI UGM Yogyakarta
