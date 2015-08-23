@@ -92,6 +92,14 @@ public class MainActivity extends AppCompatActivity {
 
   private void displayPrices(int number) {
     pricesTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+
+    createOrderSummary();
+  }
+
+  private void createOrderSummary() {
+    pricesTextView.setText("Name : Pratama Nur Wijaya \nQuantity : " + currentOrder + " \nTotal : "
+        + NumberFormat.getCurrencyInstance().format(calculatePrices(currentOrder))
+        + " \nThank You !!! \nCoffekuIndonesia");
   }
 
   private void displayMessage(String message) {
