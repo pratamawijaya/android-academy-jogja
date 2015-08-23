@@ -16,59 +16,65 @@
       android:layout_height="0dp"
       android:layout_weight="6"
       >
-    <LinearLayout
+    <ScrollView
         android:layout_weight="1"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
-
-      <!-- team-->
-      <TextView
+      <LinearLayout
           android:layout_width="match_parent"
-          android:text="Team A"
-          android:gravity="center_horizontal"
-          android:layout_height="wrap_content"
-          />
-      <!-- point-->
-      <TextView
-          android:layout_gravity="center_horizontal"
-          android:id="@+id/txtPointA"
-          android:textSize="64sp"
-          android:layout_marginTop="10dp"
-          android:layout_marginBottom="10dp"
-          android:layout_width="wrap_content"
-          android:text="0"
-          android:layout_height="wrap_content"
-          />
-      <!-- button-->
-      <Button
-          android:background="#d76730"
-          android:layout_marginBottom="5dp"
-          android:id="@+id/btnPoint3A"
-          android:layout_width="match_parent"
-          android:text="+3 POINTS"
-          android:layout_height="wrap_content"
-          />
+          android:layout_height="match_parent"
+          android:orientation="vertical"
+          >
 
-      <Button
-          android:layout_marginBottom="5dp"
-          android:background="#d76730"
-          android:id="@+id/btnPoint2A"
-          android:layout_width="match_parent"
-          android:text="+2 POINTS"
-          android:layout_height="wrap_content"
-          />
+        <!-- team-->
+        <TextView
+            android:layout_width="match_parent"
+            android:text="Team A"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            />
+        <!-- point-->
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/txtPointA"
+            android:textSize="64sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:text="0"
+            android:layout_height="wrap_content"
+            />
+        <!-- button-->
+        <Button
+            android:background="#d76730"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/btnPoint3A"
+            android:layout_width="match_parent"
+            android:text="+3 POINTS"
+            android:layout_height="wrap_content"
+            />
 
-      <Button
-          android:background="#d76730"
-          android:id="@+id/btnPointFreeA"
-          android:layout_width="match_parent"
-          android:text="FREE THROW"
-          android:layout_height="wrap_content"
-          />
+        <Button
+            android:layout_marginBottom="5dp"
+            android:background="#d76730"
+            android:id="@+id/btnPoint2A"
+            android:layout_width="match_parent"
+            android:text="+2 POINTS"
+            android:layout_height="wrap_content"
+            />
 
-    </LinearLayout>
+        <Button
+            android:background="#d76730"
+            android:id="@+id/btnPointFreeA"
+            android:layout_width="match_parent"
+            android:text="FREE THROW"
+            android:layout_height="wrap_content"
+            />
+
+      </LinearLayout>
+    </ScrollView>
 
     <View
         android:layout_marginLeft="10dp"
@@ -78,60 +84,66 @@
         android:layout_height="match_parent"
         />
 
-    <LinearLayout
+    <ScrollView
         android:layout_weight="1"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         >
-      <!-- team-->
-      <TextView
+      <LinearLayout
           android:layout_width="match_parent"
-          android:text="Team B"
-          android:gravity="center_horizontal"
-          android:layout_height="wrap_content"
-          />
-      <!-- point-->
-      <TextView
-          android:layout_gravity="center_horizontal"
-          android:id="@+id/txtPointB"
-          android:textSize="64sp"
-          android:layout_marginTop="10dp"
-          android:layout_marginBottom="10dp"
-          android:layout_width="wrap_content"
-          android:text="0"
-          android:layout_height="wrap_content"
-          />
-      <!-- button -->
-      <Button
-          android:background="#d76730"
-          android:id="@+id/btnPoint3B"
-          android:layout_marginBottom="5dp"
-          android:layout_width="match_parent"
-          android:text="+3 POINTS"
-          android:layout_height="wrap_content"
-          />
+          android:layout_height="match_parent"
+          android:orientation="vertical"
+          >
+        <!-- team-->
+        <TextView
+            android:layout_width="match_parent"
+            android:text="Team B"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            />
+        <!-- point-->
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/txtPointB"
+            android:textSize="64sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:text="0"
+            android:layout_height="wrap_content"
+            />
+        <!-- button -->
+        <Button
+            android:background="#d76730"
+            android:id="@+id/btnPoint3B"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:text="+3 POINTS"
+            android:layout_height="wrap_content"
+            />
 
-      <Button
-          android:background="#d76730"
-          android:layout_marginBottom="5dp"
-          android:id="@+id/btnPoint2B"
-          android:layout_width="match_parent"
-          android:text="+2 POINTS"
-          android:layout_height="wrap_content"
-          />
+        <Button
+            android:background="#d76730"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/btnPoint2B"
+            android:layout_width="match_parent"
+            android:text="+2 POINTS"
+            android:layout_height="wrap_content"
+            />
 
-      <Button
-          android:background="#d76730"
-          android:id="@+id/btnPointFreeB"
-          android:layout_width="match_parent"
-          android:text="FREE THROW"
-          android:layout_height="wrap_content"
-          />
+        <Button
+            android:background="#d76730"
+            android:id="@+id/btnPointFreeB"
+            android:layout_width="match_parent"
+            android:text="FREE THROW"
+            android:layout_height="wrap_content"
+            />
 
-    </LinearLayout>
+      </LinearLayout>
 
+    </ScrollView>
   </LinearLayout>
+
   <RelativeLayout
       android:layout_width="match_parent"
       android:layout_height="0dp"
