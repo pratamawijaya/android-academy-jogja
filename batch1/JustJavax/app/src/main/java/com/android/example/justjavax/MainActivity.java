@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.android.example.justjavax.model.Car;
@@ -25,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
   private Button btnOrder, btnPlus, btnMinus;
   private TextView quantityOrder;
   private TextView pricesTextView, txtResult;
-  private CheckBox cbVanilla;
+  private CheckBox cbVanilla, cbChocolate;
+  private boolean hasVanilla = false;
+  private EditText inputName;
 
   //ini method yang pertama kali dijalankan
   @Override protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
     btnMinus = (Button) findViewById(R.id.btnMinus);
     btnPlus = (Button) findViewById(R.id.btnPlus);
     cbVanilla = (CheckBox) findViewById(R.id.cbVanilla);
+    cbChocolate = (CheckBox) findViewById(R.id.cbChocolate);
+    inputName = (EditText) findViewById(R.id.inputName);
 
     // beri event listener
     btnOrder.setOnClickListener(new View.OnClickListener() {
@@ -112,8 +117,13 @@ public class MainActivity extends AppCompatActivity {
       // maka
       Log.d("debug", "vanilla di cek");
       total = total + 3000;
-      //total += 3000;
+      hasVanilla = true;
     }
+
+    if (cbChocolate.isChecked()) {
+      total = total + 4000;
+    }
+
     return total;
   }
 
@@ -124,9 +134,10 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private void createOrderSummary() {
-    pricesTextView.setText("Name : Pratama Nur Wijaya \nQuantity : " + currentOrder + " \nTotal : "
-        + NumberFormat.getCurrencyInstance().format(calculatePrices(currentOrder))
-        + " \nThank You !!! \nCoffekuIndonesia");
+    pricesTextView.setText(
+        "Name : " + inputName.getText().toString() + " \nQuantity : " + currentOrder + " \nTotal : "
+            + NumberFormat.getCurrencyInstance().format(calculatePrices(currentOrder))
+            + "\nAdd Vanilla :  " + hasVanilla + " \nThank You !!! \nCoffekuIndonesia");
   }
 
   private void displayMessage(String message) {
