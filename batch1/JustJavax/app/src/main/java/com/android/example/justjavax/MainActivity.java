@@ -2,6 +2,7 @@ package com.android.example.justjavax;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -66,9 +67,14 @@ public class MainActivity extends AppCompatActivity {
     btnOrder.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View view) {
 
-        int total = calculatePrices(currentOrder);
+        if (TextUtils.isEmpty(inputName.getText().toString())) {
+          // jika nama kosong
+          Toast.makeText(MainActivity.this, "Nama Kosong", Toast.LENGTH_SHORT).show();
+        } else {
+          int total = calculatePrices(currentOrder);
 
-        displayPrices(total);
+          displayPrices(total);
+        }
       }
     });
 
