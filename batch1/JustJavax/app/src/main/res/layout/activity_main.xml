@@ -8,36 +8,61 @@
     >
 
   <TextView
+      android:layout_width="wrap_content"
+      android:text="Topping"
+      android:layout_height="wrap_content"
+      />
+
+  <CheckBox android:id="@+id/cbVanilla"
+      android:text="Vanilla"
+      android:layout_marginBottom="16dp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      />
+
+  <TextView
       android:layout_marginBottom="16dp"
       android:text="QUANTITY"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       />
-  <Button
-      android:id="@+id/btnPlus"
-      android:text="+"
-      android:layout_marginBottom="16sp"
-      android:layout_width="50dp"
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      />
+      >
 
-  <TextView
-      android:text="0"
-      android:id="@+id/quantity_text_view"
-      android:textColor="#000"
-      android:textSize="16sp"
-      android:layout_marginBottom="16dp"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      />
-  <Button
-      android:id="@+id/btnMinus"
-      android:layout_marginBottom="16sp"
-      android:text="-"
-      android:layout_width="50dp"
-      android:layout_height="wrap_content"
-      />
+    <Button
+        android:id="@+id/btnMinus"
+        android:layout_marginBottom="16sp"
+        android:text="-"
+        android:layout_marginRight="10dp"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        />
 
+
+    <TextView
+        android:text="0"
+        android:id="@+id/quantity_text_view"
+        android:textColor="#000"
+        android:layout_marginRight="10dp"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <Button
+        android:layout_marginRight="10dp"
+        android:id="@+id/btnPlus"
+        android:text="+"
+        android:layout_marginBottom="16sp"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        />
+
+  </LinearLayout>
   <TextView
       android:text="PRICES"
       android:layout_width="wrap_content"

@@ -2,12 +2,15 @@ package com.android.example.justjavax;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.android.example.justjavax.model.Car;
 import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,11 +25,27 @@ public class MainActivity extends AppCompatActivity {
   private Button btnOrder, btnPlus, btnMinus;
   private TextView quantityOrder;
   private TextView pricesTextView, txtResult;
+  private CheckBox cbVanilla;
 
-  // ini method yang pertama kali dijalankan
+  //ini method yang pertama kali dijalankan
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+
     setContentView(R.layout.activity_main);
+
+    // proses instance
+    // proses instansiasi/ membuat baru sebuah objek
+    Car lambo = new Car();
+    Car toyota = new Car();
+    Car ferrari = new Car("Red", "AB2091DT");
+    Car mazda = new Car("Blue");
+
+    ferrari.getColor(); // Red
+    lambo.getColor(); // null
+    lambo.setColor("Blue");
+    lambo.getColor();// Blue
+    mazda.getColor();// Blue
+    mazda.getPlatnomor(); // null
 
     // 2.
     // inisiasi button
@@ -36,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
     pricesTextView = (TextView) findViewById(R.id.prices_text_view);
     btnMinus = (Button) findViewById(R.id.btnMinus);
     btnPlus = (Button) findViewById(R.id.btnPlus);
+    cbVanilla = (CheckBox) findViewById(R.id.cbVanilla);
 
     // beri event listener
     btnOrder.setOnClickListener(new View.OnClickListener() {
@@ -87,6 +107,13 @@ public class MainActivity extends AppCompatActivity {
 
   private int calculatePrices(int quantity) {
     int total = 50000 * quantity;
+    // jika combo box vanilla dipilih
+    if (cbVanilla.isChecked()) {
+      // maka
+      Log.d("debug", "vanilla di cek");
+      total = total + 3000;
+      //total += 3000;
+    }
     return total;
   }
 
