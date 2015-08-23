@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
   // 1. Definisikan view
   private Button btnOrder, btnPlus, btnMinus;
   private TextView quantityOrder;
-  private TextView pricesTextView;
+  private TextView pricesTextView, txtResult;
 
   // ini method yang pertama kali dijalankan
   @Override protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     // 2.
     // inisiasi button
+    txtResult = (TextView) findViewById(R.id.txtResult);
     btnOrder = (Button) findViewById(R.id.btnOrder);
     quantityOrder = (TextView) findViewById(R.id.quantity_text_view);
     pricesTextView = (TextView) findViewById(R.id.prices_text_view);
@@ -40,9 +41,9 @@ public class MainActivity extends AppCompatActivity {
     btnOrder.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View view) {
 
-        Toast.makeText(MainActivity.this, "btn order click", Toast.LENGTH_SHORT).show();
-        // panggil method
-        displayPrices(DEFAULT_NUMBER_COFFEE * PRICES);
+        int total = calculatePrices(currentOrder);
+
+        displayPrices(total);
       }
     });
 
@@ -60,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
       }
     });
   }
-
 
   /**
    * Method set angka ke textview quantityOrder
@@ -85,8 +85,17 @@ public class MainActivity extends AppCompatActivity {
     }
   }
 
+  private int calculatePrices(int quantity) {
+    int total = 50000 * quantity;
+    return total;
+  }
+
   private void displayPrices(int number) {
     pricesTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+  }
+
+  private void displayMessage(String message) {
+    Toast.makeText(MainActivity.this, "" + message, Toast.LENGTH_SHORT).show();
   }
 
   // ini method untuk generate menu
