@@ -69,6 +69,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
   }
 
   @Override public void onClick(View view) {
+    // percabangan
+
     switch (view.getId()) {
       case R.id.btnPoint3A:
         changePointA(3);
@@ -94,6 +96,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
   }
 
+  /**
+   * reset point untuk kedua team
+   */
   private void resetPoint() {
     currentPointA = 0;
     currentPointB = 0;
@@ -101,11 +106,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     txtPointB.setText("" + currentPointB);
   }
 
+  /**
+   * merubah point untuk team B
+   */
   private void changePointB(int i) {
     currentPointB += i;
     txtPointB.setText("" + currentPointB);
   }
 
+  /**
+   * merubah point untuk team A
+   */
   private void changePointA(int i) {
     currentPointA += i;
     txtPointA.setText("" + currentPointA);
