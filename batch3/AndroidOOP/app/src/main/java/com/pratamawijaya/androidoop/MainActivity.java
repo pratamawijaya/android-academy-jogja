@@ -1,15 +1,31 @@
 package com.pratamawijaya.androidoop;
 
-import android.support.v7.app.AppCompatActivity;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+  RelativeLayout relativeLayout;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+
+    relativeLayout = (RelativeLayout) findViewById(R.id.parent);
+
+    TextView title = new TextView(this);
+    title.setText("apaaaa");
+    title.setTextSize(20);
+    title.setAllCaps(true);
+    title.setTextColor(Color.RED);
+
+    relativeLayout.addView(title);
+
   }
 
   @Override public boolean onCreateOptionsMenu(Menu menu) {

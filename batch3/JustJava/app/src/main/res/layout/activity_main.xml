@@ -8,21 +8,59 @@
     >
 
   <TextView
-      android:text="QUANTITY"
+      android:text="TOPPINGS"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       />
-  <TextView
-      android:id="@+id/quantity"
+  <CheckBox
+      android:id="@+id/cbWhippedCream"
       android:layout_marginTop="10dp"
-      android:textSize="16sp"
-      android:textColor="@android:color/black"
       android:layout_width="wrap_content"
-      android:text="0"
+      android:text="Whipped Cream"
       android:layout_height="wrap_content"
       />
 
   <TextView
+      android:layout_marginTop="16dp"
+      android:text="QUANTITY"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      />
+  <LinearLayout
+      android:layout_marginTop="16dp"
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      >
+    <Button
+        android:id="@+id/btnKurang"
+        android:layout_width="40dp"
+        android:text="-"
+        android:layout_marginRight="16dp"
+        android:layout_height="wrap_content"
+        />
+    <TextView
+        android:id="@+id/quantity"
+        android:textSize="16sp"
+        android:layout_marginRight="16dp"
+        android:textColor="@android:color/black"
+        android:layout_width="wrap_content"
+        android:text="0"
+        android:layout_height="wrap_content"
+        />
+
+    <Button
+        android:id="@+id/btnTambah"
+        android:layout_width="40dp"
+        android:text="+"
+        android:layout_height="wrap_content"
+        />
+
+  </LinearLayout>
+
+
+  <TextView
+      android:layout_marginTop="16dp"
       android:text="Price"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
@@ -38,14 +76,13 @@
       />
 
 
-  <ImageView
-      android:src="@drawable/btn_corner"
+  <Button
       android:onClick="submitOrder"
       android:id="@+id/btnOrder"
       android:layout_marginTop="10dp"
-      android:layout_width="60dp"
+      android:layout_width="wrap_content"
       android:text="Order"
-      android:layout_height="60dp"
+      android:layout_height="wrap_content"
       />
 
 </LinearLayout>
