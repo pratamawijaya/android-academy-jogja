@@ -72,8 +72,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
       total = total + 1;
     }
     txtPrice.setText(String.format(
-        "Name : %s\nAdd whiped cream : %s\nAdd chocolate: %s\nQuantity: %d\nTotal: "
-            + NumberFormat.getCurrencyInstance().format(total) + "\nThank You!!!",
+        "Name : %s\n"
+            + "Add whiped cream : %s\n"
+            + "Add chocolate: %s\n"
+            + "Quantity: %d\n"
+            + "Total: "+ NumberFormat.getCurrencyInstance().format(total) + "\nThank You!!!",
         inputNama.getText(), cbWhippedCream.isChecked(), cbChocolate.isChecked(), quantity, total));
   }
 
