@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 import java.text.NumberFormat;
 
@@ -18,7 +19,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
   private int total = 0;
   private Button btnTambah, btnKurang;
   private TextView txtPrice;
-  private CheckBox cbWhippedCream;
+  private CheckBox cbWhippedCream, cbChocolate;
+  private EditText inputNama;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -28,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     cbWhippedCream = (CheckBox) findViewById(R.id.cbWhippedCream);
     btnKurang = (Button) findViewById(R.id.btnKurang);
     btnTambah = (Button) findViewById(R.id.btnTambah);
+    inputNama = (EditText) findViewById(R.id.inputNama);
+    cbChocolate = (CheckBox) findViewById(R.id.cbChocolate);
 
     btnKurang.setOnClickListener(this);
     btnTambah.setOnClickListener(this);
@@ -60,9 +64,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
    */
   public void submitOrder(View v) {
     // do something
-    txtPrice.setText(String.format("Name : %s\nAdd whiped cream : %s\nQuantity: %d\nTotal: "
-            + NumberFormat.getCurrencyInstance().format(total) + "\nThank You!!!", "Pratama",
-        cbWhippedCream.isChecked(), quantity, total));
+    if (cbWhippedCream.isChecked()) {
+      total = total + 1;
+    }
+
+    if (cbChocolate.isChecked()) {
+      total = total + 1;
+    }
+    txtPrice.setText(String.format(
+        "Name : %s\nAdd whiped cream : %s\nAdd chocolate: %s\nQuantity: %d\nTotal: "
+            + NumberFormat.getCurrencyInstance().format(total) + "\nThank You!!!",
+        inputNama.getText(), cbWhippedCream.isChecked(), cbChocolate.isChecked(), quantity, total));
   }
 
   /**

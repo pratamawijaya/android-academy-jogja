@@ -8,6 +8,7 @@
     >
 
   <EditText
+      android:id="@+id/inputNama"
       android:layout_marginBottom="16dp"
       android:hint="Name"
       android:layout_width="match_parent"
@@ -23,6 +24,13 @@
       android:layout_marginTop="10dp"
       android:layout_width="wrap_content"
       android:text="Whipped Cream"
+      android:layout_height="wrap_content"
+      />
+
+  <CheckBox
+      android:id="@+id/cbChocolate"
+      android:layout_width="wrap_content"
+      android:text="Chocolate"
       android:layout_height="wrap_content"
       />
 
