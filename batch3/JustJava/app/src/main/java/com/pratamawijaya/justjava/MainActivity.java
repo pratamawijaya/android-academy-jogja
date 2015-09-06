@@ -76,7 +76,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             + "Add whiped cream : %s\n"
             + "Add chocolate: %s\n"
             + "Quantity: %d\n"
-            + "Total: "+ NumberFormat.getCurrencyInstance().format(total) + "\nThank You!!!",
+            + "Total: "+ NumberFormat.getCurrencyInstance().format(total) + "\n"
+            + "Thank You!!!",
         inputNama.getText(), cbWhippedCream.isChecked(), cbChocolate.isChecked(), quantity, total));
   }
 
