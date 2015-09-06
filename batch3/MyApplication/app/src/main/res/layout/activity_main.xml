@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+
+  <ImageView
+      android:scaleType="centerCrop"
+      android:layout_width="match_parent"
+      android:src="@drawable/bebek"
+      android:layout_height="match_parent"
+      />
+
+  <TextView
+      android:textSize="32sp"
+      android:textColor="#fff"
+      android:text="Happy birthday Ben !"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      />
+
+  <TextView
+      android:textSize="40sp"
+      android:textColor="#762020"
+      android:layout_alignParentRight="true"
+      android:layout_alignParentBottom="true"
+      android:text="From Tama"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      />
+</RelativeLayout>

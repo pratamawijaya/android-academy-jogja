@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+
+  <TextView
+      android:text="QUANTITY"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      />
+  <TextView
+      android:id="@+id/quantity"
+      android:layout_marginTop="10dp"
+      android:textSize="16sp"
+      android:textColor="@android:color/black"
+      android:layout_width="wrap_content"
+      android:text="0"
+      android:layout_height="wrap_content"
+      />
+
+  <TextView
+      android:text="Price"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      />
+  <TextView
+      android:id="@+id/price"
+      android:layout_marginTop="10dp"
+      android:textSize="16sp"
+      android:textColor="@android:color/black"
+      android:layout_width="wrap_content"
+      android:text="$0"
+      android:layout_height="wrap_content"
+      />
+
+
+  <ImageView
+      android:src="@drawable/btn_corner"
+      android:onClick="submitOrder"
+      android:id="@+id/btnOrder"
+      android:layout_marginTop="10dp"
+      android:layout_width="60dp"
+      android:text="Order"
+      android:layout_height="60dp"
+      />
+
+</LinearLayout>

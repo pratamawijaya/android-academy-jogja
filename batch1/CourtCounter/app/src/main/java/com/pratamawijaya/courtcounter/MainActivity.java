@@ -18,6 +18,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
   private int currentPointA = 0;
   private int currentPointB = 0;
 
+  @Override protected void onStart() {
+    super.onStart();
+  }
+
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
@@ -118,7 +122,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
    * merubah point untuk team A
    */
   private void changePointA(int i) {
-    currentPointA += i;
+    //currentPointA += i;
+    currentPointA = currentPointA + i;
     txtPointA.setText("" + currentPointA);
   }
 }
