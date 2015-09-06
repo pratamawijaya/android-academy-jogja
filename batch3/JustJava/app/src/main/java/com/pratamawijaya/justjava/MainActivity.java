@@ -5,17 +5,32 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import java.text.NumberFormat;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
   // global
   int priceOfCoffe = 5;
+  private int quantity = 0;
+  private int total = 0;
+  private Button btnTambah, btnKurang;
+  private TextView txtPrice;
+  private CheckBox cbWhippedCream;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+
+    txtPrice = (TextView) findViewById(R.id.price);
+    cbWhippedCream = (CheckBox) findViewById(R.id.cbWhippedCream);
+    btnKurang = (Button) findViewById(R.id.btnKurang);
+    btnTambah = (Button) findViewById(R.id.btnTambah);
+
+    btnKurang.setOnClickListener(this);
+    btnTambah.setOnClickListener(this);
   }
 
   @Override public boolean onCreateOptionsMenu(Menu menu) {
@@ -45,8 +60,9 @@ public class MainActivity extends AppCompatActivity {
    */
   public void submitOrder(View v) {
     // do something
-    displayPrice(5 * priceOfCoffe);
-    displayQuantity(5);
+    txtPrice.setText(String.format("Name : %s\nAdd whiped cream : %s\nQuantity: %d\nTotal: "
+            + NumberFormat.getCurrencyInstance().format(total) + "\nThank You!!!", "Pratama",
+        cbWhippedCream.isChecked(), quantity, total));
   }
 
   /**
@@ -65,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
    * @param i harga produk
    */
   private void displayPrice(int i) {
-    TextView txtPrice = (TextView) findViewById(R.id.price);
     txtPrice.setText("" + NumberFormat.getCurrencyInstance().format(i));
   }
 
@@ -75,5 +90,22 @@ public class MainActivity extends AppCompatActivity {
    */
   private void display(int number) {
 
+  }
+
+  @Override public void onClick(View view) {
+    switch (view.getId()) {
+      case R.id.btnTambah:
+        quantity = quantity + 1;
+        displayQuantity(quantity);
+        break;
+      case R.id.btnKurang:
+        if (quantity > 0) {
+          quantity = quantity - 1;
+          displayQuantity(quantity);
+        }
+        break;
+    }
+    total = quantity * priceOfCoffe;
+    displayPrice(total);
   }
 }
