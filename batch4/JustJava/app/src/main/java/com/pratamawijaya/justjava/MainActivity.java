@@ -6,17 +6,24 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+  // coffee price
   private static final int HARGA_KOPI = 5;
+  // topping price
+  private static final int PRICE_CHOCO = 1;
+  private static final int PRICE_VANILLA = 1;
   // 1. deklarasi button
   private Button btnOrder;
   private Button btnPlus, btnMinus;
   private TextView txtQuantity, txtPrices;
+  private CheckBox cbChoco, cbVanilla;
   private int quantityTotal = 0;
+  private int totalPrice;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -28,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     btnMinus = (Button) findViewById(R.id.btn_min);
     txtQuantity = (TextView) findViewById(R.id.text_counter);
     txtPrices = (TextView) findViewById(R.id.text_price);
+    cbChoco = (CheckBox) findViewById(R.id.cb_choco);
+    cbVanilla = (CheckBox) findViewById(R.id.cb_vanilla);
 
     btnOrder.setOnClickListener(this);
     btnPlus.setOnClickListener(this);
@@ -50,7 +59,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
    * method yang dijalankan ketika button order di klik
    */
   public void submitOrder() {
-    displayPrice(quantityTotal * HARGA_KOPI);
+    totalPrice = quantityTotal * HARGA_KOPI;
+
+    if (cbChoco.isChecked()) {
+      totalPrice = totalPrice + (PRICE_CHOCO * quantityTotal);
+    }
+
+    if (cbVanilla.isChecked()) {
+      totalPrice = totalPrice + (PRICE_VANILLA * quantityTotal);
+    }
+
+    displayPrice(totalPrice);
   }
 
   /**
