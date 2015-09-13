@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">JustJava</string>
+  <string name="lbl_add_choco">In Choco</string>
+  <string name="lbl_add_vanilla">In Vanilla</string>
+  <string name="lbl_choco">Choco</string>
+  <string name="lbl_vanilla">Vanilla</string>
+  <string name="lbl_prices">Preise</string>
+  <string name="lbl_order">Auftrag</string>
+  <string name="lbl_nama_pemesan">Käufer Namens</string>
+  <string name="lbl_nama">Name</string>
+  <string name="lbl_quantity">Menge</string>
+  <string name="lbl_thanks">Vielen Dank</string>
+  <string name="lbl_topping">Belag</string>
+  <string name="lbl_total">Gesamt</string>
+</resources>

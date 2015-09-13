@@ -10,20 +10,34 @@
     >
 
   <TextView
+      android:text="@string/lbl_nama"
       android:layout_width="wrap_content"
-      android:text="Topping"
+      android:layout_height="wrap_content"
+      />
+
+  <EditText
+      android:id="@+id/txt_nama"
+      android:hint="@string/lbl_nama_pemesan"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      />
+
+  <TextView
+      android:layout_marginTop="10dp"
+      android:layout_width="wrap_content"
+      android:text="@string/lbl_topping"
       android:layout_height="wrap_content"
       />
   <CheckBox
       android:id="@+id/cb_choco"
       android:layout_marginTop="10dp"
-      android:text="Choco"
+      android:text="@string/lbl_choco"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       />
   <CheckBox
       android:id="@+id/cb_vanilla"
-      android:text="Vanilla"
+      android:text="@string/lbl_vanilla"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       />
@@ -31,7 +45,7 @@
   <TextView
       android:layout_marginTop="10dp"
       android:layout_width="wrap_content"
-      android:text="Quantity"
+      android:text="@string/lbl_quantity"
       android:layout_height="wrap_content"
       />
 
@@ -65,7 +79,7 @@
 
   <TextView
       android:layout_marginTop="16dp"
-      android:text="Price"
+      android:text="@string/lbl_prices"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       />
@@ -81,7 +95,7 @@
   <Button
       android:id="@+id/btn_order"
       android:layout_marginTop="10dp"
-      android:text="Order"
+      android:text="@string/lbl_order"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       />

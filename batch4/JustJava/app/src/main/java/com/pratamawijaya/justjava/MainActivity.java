@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 import java.text.NumberFormat;
 
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
   private Button btnOrder;
   private Button btnPlus, btnMinus;
   private TextView txtQuantity, txtPrices;
+  private EditText nama;
   private CheckBox cbChoco, cbVanilla;
   private int quantityTotal = 0;
   private int totalPrice;
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     txtPrices = (TextView) findViewById(R.id.text_price);
     cbChoco = (CheckBox) findViewById(R.id.cb_choco);
     cbVanilla = (CheckBox) findViewById(R.id.cb_vanilla);
+    nama = (EditText) findViewById(R.id.txt_nama);
 
     btnOrder.setOnClickListener(this);
     btnPlus.setOnClickListener(this);
@@ -78,10 +81,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
    * @param i angka
    */
   private void displayPrice(int i) {
-    String text = "Total : " + NumberFormat.getCurrencyInstance().format(i);
-    text += "\nAdd Choco : " + cbChoco.isChecked();
-    text += "\nAdd Vanilla : " + cbVanilla.isChecked();
-    text += "\n\nThanks Mr Pratama !!!";
+    String text = getResources().getString(R.string.lbl_total) +
+        " : " + NumberFormat.getCurrencyInstance().format(i);
+    text += "\n" + getResources().getString(R.string.lbl_add_choco) + ": " + cbChoco.isChecked();
+    text +=
+        "\n" + getResources().getString(R.string.lbl_add_vanilla) + " : " + cbVanilla.isChecked();
+    text += "\n\n" + getResources().getString(R.string.lbl_thanks) + " " + nama.getText().toString()
+        + "!!!";
 
     txtPrices.setText("" + text);
   }
