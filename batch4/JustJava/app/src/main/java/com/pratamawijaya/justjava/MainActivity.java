@@ -59,7 +59,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
    * @param i angka
    */
   private void displayPrice(int i) {
-    txtPrices.setText("Total : " + NumberFormat.getCurrencyInstance().format(i));
+    txtPrices.setText(
+        getResources().getString(R.string.lbl_total) + " : " + NumberFormat.getCurrencyInstance()
+            .format(i));
   }
 
   @Override public boolean onOptionsItemSelected(MenuItem item) {
